@@ -1,13 +1,13 @@
 const express = require('express');
 const sequelize = require('./config/database.js');
-const autorRoutes = require('./routes/autorRoutes');
-const libroRoutes = require('./routes/libroRoutes');
+//const autorRoutes = require('./routes/autorRoutes');
+const turnoRoutes = require('./routes/turnoRoutes');
 
 const app = express();
 app.use(express.json());
 
-app.use('/api/autores', autorRoutes);
-app.use('/api/libros', libroRoutes);
+//app.use('/api/autores', autorRoutes);
+app.use('/api/turnos', turnoRoutes);
 
 (async () => {
   try {

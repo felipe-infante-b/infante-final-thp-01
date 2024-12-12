@@ -1,7 +1,8 @@
-const Autor = require('./Autor');
-const Libro = require('./Libro');
+// const Autor = require('./Autor');
 
-Libro.belongsTo(Autor, { foreignKey: 'autorId', as: 'autor' });
-Autor.hasMany(Libro, { foreignKey: 'autorId', as: 'libros' });
+// Libro.belongsTo(Autor, { foreignKey: 'autorId', as: 'autor' });
+// Autor.hasMany(Libro, { foreignKey: 'autorId', as: 'libros' });
 
-module.exports = { Autor, Libro };
+
+const Turno = require('./Turno.js');
+module.exports = { Turno };
