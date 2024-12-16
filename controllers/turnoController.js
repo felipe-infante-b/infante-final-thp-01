@@ -1,4 +1,22 @@
-const { Turno } = require('../models');
+const { Turno } = require('../models/Turno.js');
+const sequelize = require('../config/database.js');
+const { Op } = require('sequelize');
+const { generarReporteDiversidad } = require('../services/TurnoService.js');
+
+exports.reporteDiversidadServicios = async (req, res) => {
+  try {
+    const { mes } = req.params;
+    const reporte = await generarReporteDiversidad(mes);
+
+    return res.status(200).json({
+      mes: mes,
+      reporte: reporte,
+    });
+  } catch (error) {
+    console.error('Error al generar el reporte de diversidad de servicios:', error);
+    return res.status(400).json({ error: error.message });
+  }
+};
 
 exports.getTurnos = async (req, res) => {
   try {

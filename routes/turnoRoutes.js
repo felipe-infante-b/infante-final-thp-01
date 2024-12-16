@@ -1,11 +1,15 @@
 const express = require('express');
-const { getTurnos, createTurno, getTurno } = require('../controllers/turnoController.js');
+// const { getTurnos, createTurno, getTurno } = require('../controllers/turnoController.js');
+// const reporteDiversidadServicios = require("../services/TurnoService.js")
+
+const turnoController = require("../controllers/turnoController.js")
 
 const router = express.Router();
 
-router.get('/', getTurnos);
-router.get('/:id', getTurno);
-router.post('/', createTurno);
+router.get('/', turnoController.getTurnos);
+router.get('/:id', turnoController.getTurno);
+router.post('/', turnoController.createTurno);
+router.get('/reporte-servicios/:mes', turnoController.reporteDiversidadServicios);
 //router.put('/:id', updateLibro);
 //router.delete('/:id', deleteLibro);
 

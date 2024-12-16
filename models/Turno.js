@@ -49,4 +49,4 @@ const Turno = sequelize.define('Turno', {
 // Autor.hasMany(Libro, { foreignKey: 'autorId', onDelete: 'CASCADE' });
 // Libro.belongsTo(Autor, { foreignKey: 'autorId' });
 
-module.exports = Turno;
+module.exports = {Turno};
