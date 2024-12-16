@@ -2,7 +2,6 @@ const { Turno } = require('../models/Turno.js');
 const sequelize = require('../config/database.js');
 const { Op } = require('sequelize');
 
-// Función para generar el reporte de diversidad de servicios
 const generarReporteDiversidad = async (mes) => {
   if (!mes || isNaN(mes) || mes < 1 || mes > 12) {
     throw new Error('El parámetro mes debe ser un número entre 1 y 12.');

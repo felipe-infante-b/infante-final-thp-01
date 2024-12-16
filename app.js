@@ -1,17 +1,15 @@
 const express = require('express');
 const sequelize = require('./config/database.js');
-//const autorRoutes = require('./routes/autorRoutes');
 const turnoRoutes = require('./routes/turnoRoutes');
 
 const app = express();
 app.use(express.json());
 
-//app.use('/api/autores', autorRoutes);
 app.use('/api/turnos', turnoRoutes);
 
 (async () => {
   try {
-    await sequelize.sync({ force: false }); // Cambiar a `true` para reiniciar las tablas
+    await sequelize.sync({ force: false }); // `true` para reiniciar DB.
     console.log('Base de datos sincronizada');
 
     app.listen(3000, () => {
